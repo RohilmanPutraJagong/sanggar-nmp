@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanggar Seni Tunas-Muda NMP - PSHW Ranting SP.6</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#0a0a0a',
+                            darkGray: '#121212',
+                            gold: '#ffb300',
+                            goldHover: '#ffc107',
+                            red: '#d32f2f',
+                            redHover: '#f44336'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Blended custom background style matching the requested Black, Red, and Gold theme */
+        body {
+            background: radial-gradient(circle at 50% 0%, #1c0202 0%, #080808 60%), #080808;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        /* Glowing text & border shadows */
+        .glow-gold {
+            text-shadow: 0 0 15px rgba(255, 179, 0, 0.75);
+        }
+        .glow-red {
+            text-shadow: 0 0 15px rgba(211, 47, 47, 0.75);
+        }
+        .border-glow {
+            box-shadow: 0 0 15px rgba(255, 179, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+        .border-glow:hover {
+            box-shadow: 0 0 25px rgba(255, 179, 0, 0.35);
+            border-color: #ffb300;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0d0d0d;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ffb300;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d32f2f;
+        }
+
+        /* Hero image pattern */
+        .hero-pattern {
+            background-image: radial-gradient(rgba(211, 47, 47, 0.18) 1px, transparent 0), radial-gradient(rgba(255, 179, 0, 0.12) 1px, transparent 0);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
+        }
+
+        /* Animated grid items */
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.25; }
+            50% { opacity: 0.55; }
+        }
+        .ambient-glow {
+            animation: pulseGlow 6s infinite;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased min-h-screen">
+
+    <!-- Ambient background light effects -->
+    <div class="fixed top-0 left-1/4 w-[500px] h-[500px] bg-brand-red/10 rounded-full blur-[130px] pointer-events-none ambient-glow z-0"></div>
+    <div class="fixed bottom-0 right-1/4 w-[600px] h-[600px] bg-brand-gold/5 rounded-full blur-[160px] pointer-events-none ambient-glow z-0" style="animation-delay: 3s;"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-brand-black/90 backdrop-blur-md border-b border-brand-gold/20 px-4 py-3 md:px-8">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-red to-brand-gold p-0.5 flex items-center justify-center shadow-lg">
+                    <img src="IMG_6192.jpg" alt="Logo Sanggar" class="w-full h-full object-cover rounded-full" onerror="this.outerHTML='<span class=\'text-brand-gold font-extrabold text-sm tracking-tighter\'>NMP</span>'">
+                </div>
+                <div>
+                    <h1 class="text-white font-bold text-sm md:text-base tracking-wider uppercase">Tunas-Muda NMP</h1>
+                    <p class="text-[10px] text-brand-gold tracking-widest uppercase">PSHW Ranting SP.6</p>
+                </div>
+            </div>
+            
+            <!-- Desktop Links -->
+            <div class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-gray-300">
+                <a href="#beranda" class="hover:text-brand-gold transition duration-200">Beranda</a>
+                <a href="#lambang" class="hover:text-brand-gold transition duration-200">Arti Lambang</a>
+                <a href="#struktur" class="hover:text-brand-gold transition duration-200">Struktur Organisasi</a>
+                <a href="#divisi" class="hover:text-brand-gold transition duration-200">Seni vs Fighter</a>
+                <a href="#pendaftaran" class="hover:text-brand-gold transition duration-200">Pendaftaran (PAB)</a>
+                <a href="#jadwal" class="hover:text-brand-gold transition duration-200">Jadwal & Agenda</a>
+                <a href="#galeri" class="hover:text-brand-gold transition duration-200">Galeri</a>
+                <a href="#kontak" class="hover:text-brand-gold transition duration-200">Hubungi Kami</a>
+            </div>
+
+            <!-- Call To Action -->
+            <div class="hidden sm:block">
+                <a href="#pendaftaran" class="px-4 py-2 bg-gradient-to-r from-brand-red to-brand-gold text-brand-black text-xs font-extrabold uppercase tracking-widest rounded-lg hover:shadow-[0_0_15px_rgba(255,179,0,0.5)] transition-all duration-300 transform hover:-translate-y-0.5">
+                    Daftar Sekarang
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button onclick="toggleMobileMenu()" class="lg:hidden text-gray-300 hover:text-brand-gold focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden mt-3 bg-brand-darkGray/95 border border-brand-gold/10 rounded-xl p-4 space-y-3 shadow-2xl">
+            <a href="#beranda" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-brand-gold py-1">Beranda</a>
+            <a href="#lambang" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-brand-gold py-1">Arti Lambang</a>
+            <a href="#struktur" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-brand-gold py-1">Struktur Organisasi</a>
+            <a href="#divisi" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-brand-gold py-1">Seni vs Fighter</a>
+            <a href="#pendaftaran" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-brand-gold py-1">Pendaftaran (PAB)</a>
+            <a href="#jadwal" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-brand-gold py-1">Jadwal & Agenda</a>
+            <a href="#galeri" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-brand-gold py-1">Galeri</a>
+            <a href="#kontak" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-brand-gold py-1">Hubungi Kami</a>
+            <a href="#pendaftaran" onclick="toggleMobileMenu()" class="block w-full text-center py-2 bg-gradient-to-r from-brand-red to-brand-gold text-brand-black font-bold uppercase text-xs rounded-lg">Daftar Sekarang</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="beranda" class="relative min-h-screen flex items-center justify-center px-4 md:px-8 hero-pattern z-10">
+        <!-- Overlay blur shadow -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-black/50 to-brand-black pointer-events-none"></div>
+        
+        <div class="max-w-5xl mx-auto text-center relative z-10 pt-10">
+            <!-- Logos Header Panel -->
+            <div class="flex items-center justify-center space-x-4 md:space-x-8 mb-8">
+                <!-- PSHW Ranting Logo -->
+                <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-brand-black border border-brand-gold/30 p-1 flex items-center justify-center shadow-lg relative group">
+                    <div class="absolute inset-0 rounded-full border border-brand-gold/30 group-hover:border-brand-gold animate-ping duration-1000 opacity-20"></div>
+                    <img src="Black Simple Taekwondo Academy Logo.PNG" alt="PSHW Ranting SP6 Logo" class="w-full h-full object-cover rounded-full" onerror="this.onerror=null; this.src='images.jpeg';">
+                </div>
+                <!-- Main Sanggar Logo (IMG_6192.jpg) -->
+                <div class="w-20 h-20 md:w-28 md:h-28 rounded-full bg-brand-black border-2 border-brand-gold p-1 flex items-center justify-center shadow-[0_0_20px_rgba(255,179,0,0.4)] relative group">
+                    <img src="IMG_6192.jpg" alt="Sanggar Tunas Muda Utama Logo" class="w-full h-full object-cover rounded-full">
+                </div>
+                <!-- PSHW Pusat Logo -->
+                <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-brand-black border border-brand-red/30 p-1 flex items-center justify-center shadow-lg relative group">
+                    <img src="images.jpeg" alt="PSHW Logo" class="w-full h-full object-cover rounded-full" onerror="this.onerror=null; this.src='Black Simple Taekwondo Academy Logo.PNG';">
+                </div>
+            </div>
+
+            <span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold bg-brand-red/20 text-brand-gold border border-brand-red/30 mb-6 tracking-wide animate-pulse">
+                <i class="fa-solid fa-shield-halved mr-2 text-brand-red"></i> PERSAUDARAAN SETIA HATI WINONGO RANTING SP.6
+            </span>
+            <h1 class="text-4xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-gold to-brand-red tracking-tight mb-4 uppercase">
+                SANGGAR SENI <br class="hidden md:inline"><span class="text-white glow-gold">TUNAS-MUDA NMP</span>
+            </h1>
+            <p class="text-base md:text-xl text-gray-300 max-w-3xl mx-auto mb-8 font-light leading-relaxed">
+                Membentuk karakter generasi muda yang berjiwa ksatria, bermental baja, dan sehat rohani jasmani berlandaskan ajaran luhur PSHW, serta melestarikan seni beladiri tradisional di <strong class="text-brand-gold font-semibold">Kampung Naena Muktipura, Timika, Papua Tengah</strong>.
+            </p>
+
+            <!-- Quick Info Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto mb-10">
+                <div class="bg-brand-darkGray/75 border border-brand-gold/20 p-5 rounded-2xl backdrop-blur-sm text-center">
+                    <div class="text-brand-gold text-2xl mb-2"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest">Kaderisasi Utama</p>
+                    <p class="text-white font-bold text-sm mt-1">Siswa & Calon Saudara PSHW</p>
+                </div>
+                <div class="bg-brand-darkGray/75 border border-brand-red/20 p-5 rounded-2xl backdrop-blur-sm text-center">
+                    <div class="text-brand-red text-2xl mb-2"><i class="fa-solid fa-fire"></i></div>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest">Bidang Prestasi</p>
+                    <p class="text-white font-bold text-sm mt-1">Divisi Seni & Fighter</p>
+                </div>
+                <div class="bg-brand-darkGray/75 border border-brand-gold/20 p-5 rounded-2xl backdrop-blur-sm text-center">
+                    <div class="text-brand-gold text-2xl mb-2"><i class="fa-solid fa-house-chimney"></i></div>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest">Tanah Air & Budaya</p>
+                    <p class="text-white font-bold text-sm mt-1">Sentra Iwaka, Mimika, Papua</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#pendaftaran" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-brand-red to-brand-gold text-brand-black font-extrabold uppercase text-sm tracking-wider rounded-xl hover:shadow-[0_0_20px_rgba(255,179,0,0.6)] transition duration-300">
+                    <i class="fa-solid fa-user-plus mr-2"></i> Pendaftaran Anggota Baru
+                </a>
+                <a href="#lambang" class="w-full sm:w-auto px-8 py-4 border border-brand-gold/30 text-white font-extrabold uppercase text-sm tracking-wider rounded-xl hover:bg-brand-gold/10 transition duration-300">
+                    Makna Lambang Sanggar <i class="fa-solid fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Leadership Panel (Pimpinan Utama) -->
+    <section id="pimpinan" class="py-12 px-4 md:px-8 max-w-7xl mx-auto relative z-10">
+        <div class="bg-gradient-to-r from-brand-red/10 via-brand-black to-brand-gold/10 border border-brand-gold/20 rounded-3xl p-6 md:p-10 shadow-2xl">
+            <div class="text-center mb-10">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">Struktur Komando Pembina</span>
+                <h3 class="text-2xl md:text-3xl font-extrabold text-white mt-1">Pimpinan Utama Sanggar & Ranting</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Hadi Prayetno -->
+                <div class="bg-brand-darkGray/90 border border-brand-gold/20 p-6 rounded-2xl flex flex-col items-center text-center transform hover:scale-105 transition duration-300 relative group overflow-hidden">
+                    <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-red to-brand-gold"></div>
+                    <div class="w-24 h-24 rounded-full border-2 border-brand-gold overflow-hidden mb-4 bg-brand-black flex items-center justify-center text-brand-gold">
+                        <i class="fa-solid fa-yin-yang text-4xl"></i>
+                    </div>
+                    <h4 class="text-white font-extrabold text-lg">Hadi Prayetno</h4>
+                    <span class="text-xs text-brand-gold font-bold tracking-widest uppercase mt-1">Ketua Ranting PSHW SP.6</span>
+                    <p class="text-xs text-gray-400 mt-3 border-t border-gray-800 pt-3 leading-relaxed">
+                        Pembimbing Utama Ke-SH-an serta Pelindung Utama Sanggar Tunas-Muda NMP Ranting SP.6 Naena Muktipura.
+                    </p>
+                </div>
+
+                <!-- Rohilman Putra Jagong -->
+                <div class="bg-brand-darkGray/90 border border-brand-red/20 p-6 rounded-2xl flex flex-col items-center text-center transform hover:scale-105 transition duration-300 relative group overflow-hidden">
+                    <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-red to-brand-red"></div>
+                    <!-- Photo container for Rohilman -->
+                    <div class="w-24 h-24 rounded-full border-2 border-brand-red overflow-hidden mb-4 bg-brand-black relative flex items-center justify-center">
+                        <img src="ketuarohilmanputra.HEIC" alt="Rohilman Putra Jagong" class="w-full h-full object-cover object-center" 
+                             onerror="this.onerror=null; this.parentNode.innerHTML='<div class=\'w-full h-full flex flex-col items-center justify-center bg-brand-darkGray\'><i class=\'fa-solid fa-user text-3xl text-brand-red\'></i></div>';">
+                    </div>
+                    <h4 class="text-white font-extrabold text-lg">Rohilman Putra Jagong</h4>
+                    <span class="text-xs text-brand-red font-bold tracking-widest uppercase mt-1">Ketua Sanggar / Kadiv Seni</span>
+                    <p class="text-xs text-gray-400 mt-3 border-t border-gray-800 pt-3 leading-relaxed">
+                        Merancang program kurikulum kreativitas, seni kembangan bela diri, keluwesan jurus, dan manajemen operasional sanggar.
+                    </p>
+                </div>
+
+                <!-- Zaenal Abidin -->
+                <div class="bg-brand-darkGray/90 border border-brand-gold/20 p-6 rounded-2xl flex flex-col items-center text-center transform hover:scale-105 transition duration-300 relative group overflow-hidden">
+                    <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-gold to-brand-gold"></div>
+                    <!-- Photo container for Zaenal -->
+                    <div class="w-24 h-24 rounded-full border-2 border-brand-gold overflow-hidden mb-4 bg-brand-black relative flex items-center justify-center">
+                        <img src="wakilketuaxaenalabidin.HEIC" alt="Zaenal Abidin" class="w-full h-full object-cover object-top" 
+                             onerror="this.onerror=null; this.parentNode.innerHTML='<div class=\'w-full h-full flex flex-col items-center justify-center bg-brand-darkGray\'><i class=\'fa-solid fa-user text-3xl text-brand-gold\'></i></div>';">
+                    </div>
+                    <h4 class="text-white font-extrabold text-lg">Zaenal Abidin</h4>
+                    <span class="text-xs text-brand-gold font-bold tracking-widest uppercase mt-1">Wakil Ketua / Kadiv Fighter</span>
+                    <p class="text-xs text-gray-400 mt-3 border-t border-gray-800 pt-3 leading-relaxed">
+                        Bertanggung jawab dalam latihan taktis tarung, pengerasan fisik, mental petarung gelanggang, serta kesiapan tanding ksatria.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Symbol Meanings Section -->
+    <section id="lambang" class="py-20 px-4 md:px-8 bg-brand-darkGray/40 relative z-10 border-y border-brand-gold/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-red">Simbol Nilai Luhur Kami</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mt-1">Eksplorasi Makna Lambang</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mt-3 text-sm md:text-base">
+                    Di bawah naungan PSHW, setiap lambang di sanggar kami menceritakan kisah perjuangan, budaya lokal Papua, dan disiplin tinggi. Pilih lambang untuk mempelajari maknanya secara lengkap.
+                </p>
+            </div>
+
+            <!-- Tabs for Logos -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10 max-w-2xl mx-auto">
+                <button onclick="switchLogoTab('sanggar-nmp')" id="btn-sanggar-nmp" class="logo-tab-btn flex-1 min-w-[150px] py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-brand-red to-brand-gold text-brand-black shadow-lg transition duration-200">
+                    Tunas-Muda NMP (Seni)
+                </button>
+                <button onclick="switchLogoTab('nmp-fighter')" id="btn-nmp-fighter" class="logo-tab-btn flex-1 min-w-[150px] py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-brand-black border border-brand-gold/30 text-gray-300 hover:border-brand-gold transition duration-200">
+                    Tunas-Muda Fighter
+                </button>
+                <button onclick="switchLogoTab('nmp-pusat')" id="btn-nmp-pusat" class="logo-tab-btn flex-1 min-w-[150px] py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-brand-black border border-brand-gold/30 text-gray-300 hover:border-brand-gold transition duration-200">
+                    Pusat Sanggar Seni
+                </button>
+            </div>
+
+            <!-- Logo Meanings Viewports -->
+            <!-- 1. Sanggar Tunas-Muda NMP (823730AB-611F-45CB-BB68-F615ED3A22F5 2.JPG) -->
+            <div id="tab-sanggar-nmp" class="logo-content-tab grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-5 flex flex-col items-center justify-center p-8 bg-brand-black rounded-3xl border border-brand-red/30 relative overflow-hidden">
+                    <div class="w-56 h-56 rounded-full border-4 border-brand-gold flex items-center justify-center relative bg-gradient-to-b from-brand-black to-brand-red/20 shadow-2xl z-10 overflow-hidden">
+                        <img src="823730AB-611F-45CB-BB68-F615ED3A22F5 2.JPG" alt="Lambang Divisi Seni" class="w-full h-full object-cover rounded-full" onerror="this.onerror=null; this.src='IMG_6192.jpg';">
+                    </div>
+                    <p class="text-xs text-brand-gold font-bold tracking-widest mt-6 text-center">LAMBANG UTAMA SANGGAR TUNAS-MUDA NMP</p>
+                </div>
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="border-l-4 border-brand-gold pl-4 py-2">
+                        <h3 class="text-2xl font-bold text-white">Sanggar Seni Tunas-Muda NMP</h3>
+                        <p class="text-xs text-brand-gold tracking-widest uppercase font-bold">Wadah Generasi Emas & Tradisi</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                        <div class="bg-brand-black/80 border border-brand-gold/10 p-4 rounded-xl">
+                            <h4 class="text-brand-gold font-semibold text-sm mb-1"><i class="fa-solid fa-circle text-xs mr-2"></i> Bentuk Lingkaran</h4>
+                            <p class="text-xs text-gray-400">Melambangkan persatuan, kebersamaan, dan rumah. Sanggar Seni Tunas-Muda NMP menjadi ruang pulang bagi generasi muda untuk bertumbuh bersama dalam satu ikatan persaudaraan.</p>
+                        </div>
+                        <div class="bg-brand-black/80 border border-brand-gold/10 p-4 rounded-xl">
+                            <h4 class="text-emerald-400 font-semibold text-sm mb-1"><i class="fa-solid fa-seedling text-xs mr-2"></i> Tunas Tanaman</h4>
+                            <p class="text-xs text-gray-400">Tunas melambangkan generasi muda yang sedang tumbuh. Ia menandakan harapan, masa depan, dan proses pembentukan karakter.</p>
+                        </div>
+                        <div class="bg-brand-black/80 border border-brand-gold/10 p-4 rounded-xl">
+                            <h4 class="text-white font-semibold text-sm mb-1"><i class="fa-solid fa-user-ninja text-xs mr-2"></i> Siluet Sosok Pesilat</h4>
+                            <p class="text-xs text-gray-400">Sosok hitam yang sedang bergerak seni melambangkan jiwa pencak silat: keteguhan, keberanian, pengendalian diri, dan keindahan gerak.</p>
+                        </div>
+                        <div class="bg-brand-black/80 border border-brand-gold/10 p-4 rounded-xl">
+                            <h4 class="text-brand-red font-semibold text-sm mb-1"><i class="fa-solid fa-circle-notch text-xs mr-2"></i> Sabuk Merah</h4>
+                            <p class="text-xs text-gray-400">Melambangkan semangat juang, keberanian, dan tekad. Ia menjadi simbol api perjuangan anak muda yang berani bergerak dan bertanggung jawab.</p>
+                        </div>
+                        <div class="bg-brand-black/80 border border-brand-gold/10 p-4 rounded-xl">
+                            <h4 class="text-blue-400 font-semibold text-sm mb-1"><i class="fa-solid fa-water text-xs mr-2"></i> Garis Gerak Mengalir</h4>
+                            <p class="text-xs text-gray-400">Garis-garis melengkung menggambarkan aliran gerak pencak silat yang luwes namun kuat, serta mampu menyesuaikan secara tenang.</p>
+                        </div>
+                        <div class="bg-brand-black/80 border border-brand-gold/10 p-4 rounded-xl">
+                            <h4 class="text-brand-gold font-semibold text-sm mb-1"><i class="fa-solid fa-feather text-xs mr-2"></i> Motif Papua Kuning</h4>
+                            <p class="text-xs text-gray-400">Motif khas Papua berwarna kuning melambangkan identitas tanah asal, kehangatan, cahaya kehidupan, dan berakar kuat di Naena Muktipura.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Sanggar Seni Tunas Muda NMP-Fighter (6E3AE45C-5224-4829-B78B-D762EA933D04 2.JPG) -->
+            <div id="tab-nmp-fighter" class="logo-content-tab hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-5 flex flex-col items-center justify-center p-8 bg-brand-black rounded-3xl border border-brand-gold/30 relative overflow-hidden">
+                    <div class="w-56 h-56 rounded-full border-4 border-brand-red flex items-center justify-center relative bg-gradient-to-b from-brand-black to-brand-gold/20 shadow-2xl z-10 overflow-hidden">
+                        <img src="6E3AE45C-5224-4829-B78B-D762EA933D04 2.JPG" alt="Lambang Divisi Fighter" class="w-full h-full object-cover rounded-full" onerror="this.onerror=null; this.src='IMG_6192.jpg';">
+                    </div>
+                    <p class="text-xs text-brand-red font-bold tracking-widest mt-6 text-center">LAMBANG DIVISI TUNAS MUDA NMP-FIGHTER</p>
+                </div>
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="border-l-4 border-brand-red pl-4 py-2">
+                        <h3 class="text-2xl font-bold text-white">Tunas Muda NMP-Fighter</h3>
+                        <p class="text-xs text-brand-red tracking-widest uppercase font-bold">Pejuang Tangguh, Rendah Hati, & Sportif</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                        <div class="bg-brand-black/80 border border-brand-red/10 p-4 rounded-xl">
+                            <h4 class="text-white font-semibold text-sm mb-1"><i class="fa-solid fa-scroll text-xs mr-2"></i> Tulisan "Sanggar Seni"</h4>
+                            <p class="text-xs text-gray-400">Pencak silat dijunjung tinggi bukan semata pertarungan fisik, melainkan warisan budaya luhur luhur leluhur.</p>
+                        </div>
+                        <div class="bg-brand-black/80 border border-brand-red/10 p-4 rounded-xl">
+                            <h4 class="text-brand-gold font-semibold text-sm mb-1"><i class="fa-solid fa-people-arrows text-xs mr-2"></i> Siluet Dua Pesilat</h4>
+                            <p class="text-xs text-gray-400">Semangat juang, keberanian, sportivitas, serta proses pembinaan diri untuk membela kebenaran dengan rendah hati.</p>
+                        </div>
+                        <div class="bg-brand-black/80 border border-brand-red/10 p-4 rounded-xl">
+                            <h4 class="text-brand-red font-semibold text-sm mb-1"><i class="fa-solid fa-shield-halved text-xs mr-2"></i> Sabuk Merah Fighter</h4>
+                            <p class="text-xs text-gray-400">Keberanian, semangat membara, dan tekad baja yang pantang menyerah dalam menempuh latihan fisik yang keras.</p>
+                        </div>
+                        <div class="bg-brand-black/80 border border-brand-red/10 p-4 rounded-xl">
+                            <h4 class="text-brand-gold font-semibold text-sm mb-1"><i class="fa-solid fa-wave-square text-xs mr-2"></i> Gelombang Air</h4>
+                            <p class="text-xs text-gray-400">Ketenangan dan keluwesan dalam menghadapi situasi tersulit. Seorang pesilat harus tetap tenang, bijaksana, namun kokoh pendirian.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Pusat Sanggar Seni Tunas Muda (IMG_6192.jpg) -->
+            <div id="tab-nmp-pusat" class="logo-content-tab hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-5 flex flex-col items-center justify-center p-8 bg-brand-black rounded-3xl border border-white/20 relative overflow-hidden">
+                    <div class="w-56 h-56 rounded-full border-4 border-gray-500 flex items-center justify-center relative bg-gradient-to-b from-brand-black to-gray-800/30 shadow-2xl z-10 overflow-hidden">
+                        <img src="IMG_6192.jpg" alt="Pusat Sanggar Seni Tunas Muda" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <p class="text-xs text-gray-400 font-bold tracking-widest mt-6 text-center">LAMBANG PUSAT SANGGAR SENI TUNAS MUDA</p>
+                </div>
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="border-l-4 border-white pl-4 py-2">
+                        <h3 class="text-2xl font-bold text-white">Pusat Sanggar Seni Tunas Muda</h3>
+                        <p class="text-xs text-gray-400 tracking-widest uppercase font-bold">Pilar Persatuan Sektor Naena Muktipura</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                        <div class="bg-brand-black/80 border border-gray-800 p-4 rounded-xl">
+                            <h4 class="text-white font-semibold text-sm mb-1"><i class="fa-solid fa-circle text-xs mr-2"></i> Lingkaran Pemersatu</h4>
+                            <p class="text-xs text-gray-400">Melambangkan persatuan abadi seluruh keluarga besar sanggar dalam satu wadah dan satu tujuan kebudayaan.</p>
+                        </div>
+                        <div class="bg-brand-black/80 border border-gray-800 p-4 rounded-xl">
+                            <h4 class="text-brand-gold font-semibold text-sm mb-1"><i class="fa-solid fa-users-viewfinder text-xs mr-2"></i> Dua Pesilat Utama</h4>
+                            <p class="text-xs text-gray-400">Melambangkan keberanian, kedisiplinan baja, dan ketahanan batin generasi muda pesilat yang kokoh secara mental.</p>
+                        </div>
+                        <div class="bg-brand-black/80 border border-gray-800 p-4 rounded-xl">
+                            <h4 class="text-emerald-400 font-semibold text-sm mb-1"><i class="fa-solid fa-leaf text-xs mr-2"></i> Tunas Hijau Segar</h4>
+                            <p class="text-xs text-gray-400">Melambangkan pertumbuhan hidup yang sehat, harapan baru, serta dedikasi pembinaan karakter sejak dini.</p>
+                        </div>
+                        <div class="bg-brand-black/80 border border-gray-800 p-4 rounded-xl">
+                            <h4 class="text-brand-red font-semibold text-sm mb-1"><i class="fa-solid fa-palette text-xs mr-2"></i> Tiga Warna Inti</h4>
+                            <p class="text-xs text-gray-400">Hitam (Keteguhan & Kewibawaan), Hijau (Kehidupan & Harapan), dan Merah (Semangat Membara & Keberanian Ksatria).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Struktur Organisasi Section -->
+    <section id="struktur" class="py-20 px-4 md:px-8 max-w-7xl mx-auto relative z-10">
+        <div class="text-center mb-16">
+            <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">Rantai Sinergi & Komando</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white mt-1">Struktur Kepengurusan Sanggar</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mt-3 text-sm md:text-base">
+                Struktur kepengurusan formal di bawah bimbingan sesepuh ranting demi menjamin latihan dan administrasi yang tertata profesional.
+            </p>
+        </div>
+
+        <!-- Org Tree Layout (Web Responsive) -->
+        <div class="space-y-12">
+            <!-- Level 1: Pembimbing Ranting PSHW (Hadi Prayetno) -->
+            <div class="flex justify-center">
+                <div class="relative p-0.5 rounded-2xl bg-gradient-to-r from-brand-red via-brand-gold to-brand-red shadow-2xl max-w-sm w-full">
+                    <div class="bg-brand-black p-6 rounded-2xl text-center relative overflow-hidden">
+                        <div class="absolute -right-8 -top-8 w-24 h-24 bg-brand-gold/10 rounded-full blur-xl"></div>
+                        <span class="px-3 py-1 bg-brand-gold text-brand-black rounded-full font-bold text-[10px] tracking-widest uppercase">PELINDUNG & PEMBINA UTAMA</span>
+                        <h4 class="text-xl font-extrabold text-white mt-3">Hadi Prayetno</h4>
+                        <p class="text-xs text-gray-300 font-semibold mt-1">Ketua Ranting PSHW SP.6 Naena Muktipura</p>
+                        <p class="text-xs text-gray-400 mt-2 border-t border-gray-800 pt-2 italic">
+                            "Menjunjung tinggi kebenaran, membimbing fisik dan rohani seluruh saudara muda."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Connector Line -->
+            <div class="hidden md:flex justify-center -my-8">
+                <div class="w-1 h-12 bg-gradient-to-b from-brand-gold to-brand-red"></div>
+            </div>
+
+            <!-- Level 2: Ketua Sanggar & Wakil Ketua Sanggar (Pimpinan Program Sanggar) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto relative">
+                <!-- Rohilman Putra Jagong -->
+                <div class="relative p-0.5 rounded-2xl bg-gradient-to-r from-brand-red to-brand-black shadow-lg">
+                    <div class="bg-brand-black p-6 rounded-2xl text-center relative h-full flex flex-col justify-between">
+                        <div>
+                            <span class="px-3 py-1 bg-brand-red text-white rounded-full font-bold text-[10px] tracking-widest uppercase">Ketua / Divisi Program Seni</span>
+                            <h4 class="text-lg font-bold text-white mt-3">Rohilman Putra Jagong</h4>
+                            <p class="text-xs text-gray-400 mt-1">Penanggung Jawab Divisi Seni Sanggar</p>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-4 border-t border-gray-800 pt-2 italic">
+                            "Membina jurus baku IPSI, kelenturan, ekspresi estetika, dan penguasaan senjata kembangan."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Zaenal Abidin -->
+                <div class="relative p-0.5 rounded-2xl bg-gradient-to-r from-brand-black to-brand-gold shadow-lg">
+                    <div class="bg-brand-black p-6 rounded-2xl text-center relative h-full flex flex-col justify-between">
+                        <div>
+                            <span class="px-3 py-1 bg-brand-gold text-brand-black rounded-full font-bold text-[10px] tracking-widest uppercase">Wakil Ketua / Divisi Program Fighter</span>
+                            <h4 class="text-lg font-bold text-white mt-3">Zaenal Abidin</h4>
+                            <p class="text-xs text-gray-400 mt-1">Penanggung Jawab Divisi Fighter Sanggar</p>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-4 border-t border-gray-800 pt-2 italic">
+                            "Membina ketangkasan tanding gelanggang, teknik hindaran, kuncian, bantingan, dan ketahanan fisik."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Connector Line -->
+            <div class="hidden md:flex justify-center -my-8">
+                <div class="w-1 h-12 bg-gradient-to-b from-brand-red to-brand-gold"></div>
+            </div>
+
+            <!-- Level 3: Staff Administrasi & Sekbid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <!-- Sekbid Umum (Hasna) -->
+                <div class="bg-brand-darkGray/80 border border-brand-red/10 p-5 rounded-2xl text-center hover:border-brand-red/50 transition duration-300">
+                    <div class="w-10 h-10 rounded-full bg-brand-red/10 text-brand-red mx-auto flex items-center justify-center mb-3">
+                        <i class="fa-solid fa-folder-open"></i>
+                    </div>
+                    <span class="text-[9px] font-bold text-brand-red tracking-widest uppercase block">SEKBID UMUM</span>
+                    <h5 class="text-white font-bold text-base mt-1">Hasna Rahayu Safitri</h5>
+                    <p class="text-xs text-gray-400 mt-1">Pengurusan administrasi siswa, surat-menyurat resmi, arsip data latihan, dan korespondensi.</p>
+                </div>
+
+                <!-- Sekbid Keuangan (Rina Nose) -->
+                <div class="bg-brand-darkGray/80 border border-brand-gold/10 p-5 rounded-2xl text-center hover:border-brand-gold/50 transition duration-300">
+                    <div class="w-10 h-10 rounded-full bg-brand-gold/10 text-brand-gold mx-auto flex items-center justify-center mb-3">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <span class="text-[9px] font-bold text-brand-gold tracking-widest uppercase block">SEKBID KEUANGAN</span>
+                    <h5 class="text-white font-bold text-base mt-1">Rina Nose</h5>
+                    <p class="text-xs text-gray-400 mt-1">Mengelola sirkulasi kas masuk-keluar pendaftaran, iuran kas rutin, dan penyediaan perlengkapan seragam.</p>
+                </div>
+
+                <!-- Sekbid Koordinator (Fauzi) -->
+                <div class="bg-brand-darkGray/80 border border-brand-red/10 p-5 rounded-2xl text-center hover:border-brand-red/50 transition duration-300">
+                    <div class="w-10 h-10 rounded-full bg-brand-red/10 text-brand-red mx-auto flex items-center justify-center mb-3">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                    <span class="text-[9px] font-bold text-brand-red tracking-widest uppercase block">SEKBID KOORDINATOR</span>
+                    <h5 class="text-white font-bold text-base mt-1">Muhammad Fauzi Irwansyah</h5>
+                    <p class="text-xs text-gray-400 mt-1">Penghubung komunikasi antar divisi, memobilisasi jadwal latihan, dan menjaga kesolidan ikatan pengurus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divisi perbandingan & Quiz Kecocokan -->
+    <section id="divisi" class="py-20 px-4 md:px-8 bg-gradient-to-b from-brand-black via-brand-darkGray/50 to-brand-black relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-red">Fokus Jalur Spesialisasi</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mt-1">Divisi Seni VS Fighter</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mt-3 text-sm md:text-base">
+                    Siswa dipersilakan memilih salah satu jalur prestasi unggulan yang paling mewakili potensi bawaan dirinya.
+                </p>
+            </div>
+
+            <!-- Comparison Cards -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                <!-- Seni Card -->
+                <div class="bg-brand-black border-2 border-brand-red/30 rounded-3xl p-6 md:p-8 hover:border-brand-red transition duration-300 shadow-xl relative overflow-hidden">
+                    <div class="absolute right-0 top-0 w-32 h-32 bg-brand-red/5 rounded-full blur-2xl"></div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-red/10 text-brand-red flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-fan"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-extrabold text-white">DIVISI SENI</h3>
+                            <p class="text-xs text-brand-red uppercase font-semibold tracking-wider">Dibawah Arahan Rohilman Putra Jagong</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-sm text-gray-300 mb-6">
+                        Fokus pada estetika jurus, ketepatan gerak baku IPSI, kelenturan tubuh, serta kemahiran dalam memperagakan senjata tradisional (golok, belati, tongkat).
+                    </p>
+
+                    <h4 class="text-white font-bold text-sm mb-3 uppercase tracking-wider">Poin Penting Syarat Kualifikasi:</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start text-xs text-gray-300">
+                            <span class="text-brand-red mr-2 mt-0.5"><i class="fa-solid fa-circle-check"></i></span>
+                            <span>Wajib menguasai gerakan IPSI non-senjata & senjata golok secara tuntas.</span>
+                        </li>
+                        <li class="flex items-start text-xs text-gray-300">
+                            <span class="text-brand-red mr-2 mt-0.5"><i class="fa-solid fa-circle-check"></i></span>
+                            <span>Menjaga Power pukulan/tendangan yang stabil dipadukan keestetikaan gerak yang luwes.</span>
+                        </li>
+                        <li class="flex items-start text-xs text-gray-300">
+                            <span class="text-brand-red mr-2 mt-0.5"><i class="fa-solid fa-circle-check"></i></span>
+                            <span>Daya ingat tajam untuk menghafal rangkaian panjang koreografi jurus tunggal maupun ganda.</span>
+                        </li>
+                        <li class="flex items-start text-xs text-gray-300">
+                            <span class="text-brand-red mr-2 mt-0.5"><i class="fa-solid fa-circle-check"></i></span>
+                            <span>Kekuatan fisik prima (terutama kekuatan otot paha & kaki sebagai tumpuan keseimbangan).</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Fighter Card -->
+                <div class="bg-brand-black border-2 border-brand-gold/30 rounded-3xl p-6 md:p-8 hover:border-brand-gold transition duration-300 shadow-xl relative overflow-hidden">
+                    <div class="absolute right-0 top-0 w-32 h-32 bg-brand-gold/5 rounded-full blur-2xl"></div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-fire-flame-curved"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-extrabold text-white">DIVISI FIGHTER</h3>
+                            <p class="text-xs text-brand-gold uppercase font-semibold tracking-wider">Dibawah Arahan Zaenal Abidin</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-sm text-gray-300 mb-6">
+                        Fokus pada teknik pertempuran tanding bebas, ketangkasan fisik pertahanan, akurasi pukulan/tendangan, serta strategi taktis menjatuhkan lawan di arena gelanggang.
+                    </p>
+
+                    <h4 class="text-white font-bold text-sm mb-3 uppercase tracking-wider">Poin Penting Syarat Kualifikasi:</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start text-xs text-gray-300">
+                            <span class="text-brand-gold mr-2 mt-0.5"><i class="fa-solid fa-circle-check"></i></span>
+                            <span>Memiliki Power hantaman, sapuan, dan tendangan yang meledak-ledak.</span>
+                        </li>
+                        <li class="flex items-start text-xs text-gray-300">
+                            <span class="text-brand-gold mr-2 mt-0.5"><i class="fa-solid fa-circle-check"></i></span>
+                            <span>Mampu menguasai teknikan-teknikan tarung (hindaran, kuncian, bantingan, guntingan).</span>
+                        </li>
+                        <li class="flex items-start text-xs text-gray-300">
+                            <span class="text-brand-gold mr-2 mt-0.5"><i class="fa-solid fa-circle-check"></i></span>
+                            <span>Mental ksatria petarung yang kokoh & ketahanan fisik yang tinggi di bawah tekanan lawan.</span>
+                        </li>
+                        <li class="flex items-start text-xs text-gray-300">
+                            <span class="text-brand-gold mr-2 mt-0.5"><i class="fa-solid fa-circle-check"></i></span>
+                            <span>Daya tahan tubuh yang stabil, kelincahan gerak kaki (*footwork*), serta teknik gerakan yang baik & benar.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Interactive Quiz Section -->
+            <div id="divisi-quiz" class="bg-brand-darkGray/90 border border-brand-gold/20 rounded-3xl p-6 md:p-10 max-w-3xl mx-auto shadow-2xl relative overflow-hidden">
+                <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-brand-red/10 rounded-full blur-3xl"></div>
+                
+                <div class="text-center mb-8">
+                    <span class="text-xs font-bold text-brand-gold tracking-widest uppercase">Uji Karaktermu</span>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mt-1">Kuis Rekomendasi Divisi</h3>
+                    <p class="text-xs text-gray-400 mt-1">Jawablah pertanyaan cepat ini untuk melihat kecenderungan bakatmu!</p>
+                </div>
+
+                <!-- Quiz Questions (Interactive with Javascript) -->
+                <div id="quiz-container">
+                    <!-- Progress bar -->
+                    <div class="w-full bg-gray-800 h-1.5 rounded-full mb-6 overflow-hidden">
+                        <div id="quiz-progress" class="bg-gradient-to-r from-brand-red to-brand-gold h-full w-1/4 transition-all duration-300"></div>
+                    </div>
+
+                    <!-- Question Block -->
+                    <div id="question-block" class="min-h-[150px] flex flex-col justify-center">
+                        <h4 id="question-text" class="text-white text-base md:text-lg font-semibold mb-6"></h4>
+                        <div id="answers-container" class="grid grid-cols-1 gap-3">
+                            <!-- JS will inject options here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result Block (Hidden initially) -->
+                <div id="quiz-result" class="hidden text-center py-6">
+                    <div id="result-icon" class="text-5xl mb-4"></div>
+                    <h4 class="text-gray-400 text-xs font-bold uppercase tracking-widest">Rekomendasi Untukmu</h4>
+                    <h3 id="result-title" class="text-2xl md:text-3xl font-extrabold mt-1"></h3>
+                    <p id="result-description" class="text-sm text-gray-300 max-w-md mx-auto mt-3"></p>
+                    <button onclick="resetQuiz()" class="mt-6 px-6 py-2 border border-brand-gold/40 hover:border-brand-gold text-brand-gold text-xs font-bold uppercase tracking-wider rounded-xl transition duration-200">
+                        Ulangi Kuis
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Penerimaan Anggota Baru (PAB) & Detail Biaya -->
+    <section id="pendaftaran" class="py-20 px-4 md:px-8 max-w-7xl mx-auto relative z-10 border-t border-brand-gold/10">
+        <div class="text-center mb-16">
+            <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">PENERIMAAN ANGGOTA BARU</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white mt-1">Biaya & Fasilitas Pendaftaran</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mt-3 text-sm md:text-base">
+                Kami membuka kesempatan bagi generasi muda Naena Muktipura untuk bergabung. Silakan pilih bidang minat Anda dan dapatkan fasilitas standar latihan.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <!-- Bidang Fighter Card -->
+            <div class="bg-brand-black/90 border border-brand-gold/30 rounded-3xl p-8 relative overflow-hidden shadow-2xl flex flex-col justify-between hover:border-brand-gold transition duration-300">
+                <div class="absolute top-0 right-0 bg-brand-gold text-brand-black text-[10px] font-black px-4 py-1.5 uppercase tracking-widest rounded-bl-2xl">
+                    Petarung Gelanggang
+                </div>
+                <div>
+                    <span class="text-xs font-bold text-brand-gold uppercase tracking-widest">BIDANG FIGHTER</span>
+                    <div class="flex items-baseline mt-4 mb-6">
+                        <span class="text-2xl font-bold text-gray-400 mr-1">Rp</span>
+                        <span class="text-5xl font-black text-white tracking-tight">150.000</span>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-6 leading-relaxed">Pilihan tepat untuk melatih kekuatan otot, ketahanan fisik penuh, keberanian tanding, dan kecepatan respon pertahanan diri.</p>
+                    
+                    <h4 class="text-white font-bold text-xs mb-4 uppercase tracking-widest border-b border-gray-800 pb-2 font-semibold">Fasilitas yang Didapat:</h4>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-xs text-gray-300">
+                            <span class="text-brand-gold mr-3"><i class="fa-solid fa-shirt"></i></span>
+                            <span>Baju Latihan Sanggar (Bahan Premium)</span>
+                        </li>
+                        <li class="flex items-center text-xs text-gray-300">
+                            <span class="text-brand-gold mr-3"><i class="fa-solid fa-ribbon"></i></span>
+                            <span>Sabuk Tingkat Awal Latihan</span>
+                        </li>
+                        <li class="flex items-center text-xs text-gray-300">
+                            <span class="text-brand-gold mr-3"><i class="fa-solid fa-wallet"></i></span>
+                            <span>Uang Kas Minggu Awal Latihan</span>
+                        </li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/6282181210405?text=Halo%20Mas%20Zaenal%20Abidin,%20saya%20ingin%20mendaftar%20Sanggar%20Seni%20Tunas-Muda%20NMP%20bidang%20Fighter." target="_blank" rel="noopener noreferrer" class="w-full py-3.5 bg-brand-gold hover:bg-brand-goldHover text-brand-black font-extrabold text-xs uppercase tracking-widest rounded-xl text-center shadow-lg transition duration-200">
+                    Daftar Fighter (Via WA) <i class="fa-solid fa-paper-plane ml-1"></i>
+                </a>
+            </div>
+
+            <!-- Bidang Seni Card -->
+            <div class="bg-brand-black/90 border border-brand-red/30 rounded-3xl p-8 relative overflow-hidden shadow-2xl flex flex-col justify-between hover:border-brand-red transition duration-300">
+                <div class="absolute top-0 right-0 bg-brand-red text-white text-[10px] font-black px-4 py-1.5 uppercase tracking-widest rounded-bl-2xl">
+                    Seni & Estetika
+                </div>
+                <div>
+                    <span class="text-xs font-bold text-brand-red uppercase tracking-widest">BIDANG SENI</span>
+                    <div class="flex items-baseline mt-4 mb-6">
+                        <span class="text-2xl font-bold text-gray-400 mr-1">Rp</span>
+                        <span class="text-5xl font-black text-white tracking-tight">170.000</span>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-6 leading-relaxed">Pilihan tepat bagi peminat estetika silat tradisional, penguasaan jurus tunggal ganda baku IPSI, serta kemahiran senjata.</p>
+                    
+                    <h4 class="text-white font-bold text-xs mb-4 uppercase tracking-widest border-b border-gray-800 pb-2 font-semibold">Fasilitas yang Didapat:</h4>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-xs text-gray-300">
+                            <span class="text-brand-red mr-3"><i class="fa-solid fa-shirt"></i></span>
+                            <span>Baju Latihan Sanggar (Bahan Premium)</span>
+                        </li>
+                        <li class="flex items-center text-xs text-gray-300">
+                            <span class="text-brand-red mr-3"><i class="fa-solid fa-ribbon"></i></span>
+                            <span>Sabuk Tingkat Awal Latihan</span>
+                        </li>
+                        <li class="flex items-center text-xs text-gray-300">
+                            <span class="text-brand-red mr-3"><i class="fa-solid fa-wallet"></i></span>
+                            <span>Uang Kas Minggu Awal Latihan</span>
+                        </li>
+                        <li class="flex items-center text-xs text-gray-300">
+                            <span class="text-brand-red mr-3"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                            <span>Sumbangan Biaya Uang Aksesoris untuk Seni</span>
+                        </li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/6282235895652?text=Halo%20Mas%20Rohilman%20Putra,%20saya%20ingin%20mendaftar%20Sanggar%20Seni%20Tunas-Muda%20NMP%20bidang%20Seni." target="_blank" rel="noopener noreferrer" class="w-full py-3.5 bg-brand-red hover:bg-brand-redHover text-white font-extrabold text-xs uppercase tracking-widest rounded-xl text-center shadow-lg transition duration-200">
+                    Daftar Seni (Via WA) <i class="fa-solid fa-paper-plane ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jadwal & Program Periode Mei - Desember 2026 -->
+    <section id="jadwal" class="py-20 px-4 md:px-8 max-w-7xl mx-auto relative z-10">
+        <div class="text-center mb-12">
+            <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">Agenda Kerja 2026</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white mt-1">Jadwal Latihan & Agenda Penting</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mt-3 text-sm md:text-base">
+                Rencana latihan rutin, kejuaraan, kenaikan tingkat dan uji kompetensi periode Mei s.d. Desember 2026.
+            </p>
+        </div>
+
+        <!-- Training Information alert -->
+        <div class="bg-brand-darkGray/90 border border-brand-gold/30 rounded-2xl p-4 mb-8 flex flex-col sm:flex-row items-center justify-between gap-4 max-w-4xl mx-auto">
+            <div class="flex items-center space-x-3 text-left">
+                <span class="text-brand-gold text-xl"><i class="fa-solid fa-clock"></i></span>
+                <div>
+                    <h4 class="text-white font-bold text-sm">Ketentuan Jadwal Latihan Mingguan:</h4>
+                    <p class="text-xs text-gray-400">
+                        Hari Kamis Sore (Siswa Sanggar Tunas-Muda NMP) & Malam Minggu (Khusus Kandidat PSHW)
+                    </p>
+                </div>
+            </div>
+            <div class="px-3 py-1 bg-brand-red/20 text-brand-red border border-brand-red/30 rounded-xl text-xs font-semibold">
+                Tahun Penggodokan 2026
+            </div>
+        </div>
+
+        <!-- Month Navigation (Timeline Slider) -->
+        <div class="flex flex-wrap justify-center gap-2 mb-10 max-w-4xl mx-auto">
+            <button onclick="switchMonth('mei')" id="btn-mei" class="month-tab-btn py-2 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-brand-gold text-brand-black shadow transition duration-150">Mei</button>
+            <button onclick="switchMonth('juni')" id="btn-juni" class="month-tab-btn py-2 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-brand-black border border-brand-gold/20 text-gray-300 hover:border-brand-gold transition duration-150">Juni</button>
+            <button onclick="switchMonth('juli')" id="btn-juli" class="month-tab-btn py-2 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-brand-black border border-brand-gold/20 text-gray-300 hover:border-brand-gold transition duration-150">Juli</button>
+            <button onclick="switchMonth('agustus')" id="btn-agustus" class="month-tab-btn py-2 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-brand-black border border-brand-gold/20 text-gray-300 hover:border-brand-gold transition duration-150">Agustus</button>
+            <button onclick="switchMonth('september')" id="btn-september" class="month-tab-btn py-2 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-brand-black border border-brand-gold/20 text-gray-300 hover:border-brand-gold transition duration-150">September</button>
+            <button onclick="switchMonth('oktober')" id="btn-oktober" class="month-tab-btn py-2 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-brand-black border border-brand-gold/20 text-gray-300 hover:border-brand-gold transition duration-150">Oktober</button>
+            <button onclick="switchMonth('november')" id="btn-november" class="month-tab-btn py-2 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-brand-black border border-brand-gold/20 text-gray-300 hover:border-brand-gold transition duration-150">November</button>
+            <button onclick="switchMonth('desember')" id="btn-desember" class="month-tab-btn py-2 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-brand-black border border-brand-gold/20 text-gray-300 hover:border-brand-gold transition duration-150">Desember</button>
+        </div>
+
+        <!-- Month Agenda Dynamic Views -->
+        <div id="month-agendas" class="max-w-4xl mx-auto">
+            
+            <!-- MEI 2026 -->
+            <div id="month-mei" class="month-panel space-y-4">
+                <div class="bg-brand-black border border-brand-gold/20 p-6 rounded-3xl">
+                    <span class="text-[10px] text-brand-gold font-bold uppercase tracking-widest block mb-1">Fokus Utama Bulan Ini</span>
+                    <h3 class="text-xl font-bold text-white mb-2">Latihan Rutin & Tes Awal</h3>
+                    <p class="text-xs text-gray-400 mb-6">Ujian pertama penentuan kompetensi fisik, kelenturan dan pembagian bidang peminatan awal.</p>
+                    
+                    <div class="space-y-3">
+                        <div class="bg-brand-darkGray/60 p-4 rounded-xl border-l-4 border-brand-gold flex justify-between items-center">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Latihan Rutin Siswa Sanggar</h4>
+                                <p class="text-xs text-gray-400">Kamis, 7, 21 Mei 2026</p>
+                            </div>
+                            <span class="text-xs text-brand-gold bg-brand-gold/10 px-2 py-0.5 rounded">Kamis Sore</span>
+                        </div>
+                        <div class="bg-brand-darkGray/60 p-4 rounded-xl border-l-4 border-brand-red flex justify-between items-center">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Latihan Rutin Kandidat PSHW</h4>
+                                <p class="text-xs text-gray-400">Malam Minggu, 9, 16, 23 Mei 2026</p>
+                            </div>
+                            <span class="text-xs text-brand-red bg-brand-red/10 px-2 py-0.5 rounded">Malam Minggu</span>
+                        </div>
+                        <div class="bg-brand-darkGray/60 p-4 rounded-xl border-l-4 border-red-500 flex justify-between items-center">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Hari Libur Nasional (PENTING)</h4>
+                                <p class="text-xs text-gray-400">Kamis, 14 Mei (Kenaikan Isa Almasih) & Kamis, 28 Mei (Idul Adha)</p>
+                            </div>
+                            <span class="text-xs text-red-500 bg-red-500/10 px-2 py-0.5 rounded">Kondisional</span>
+                        </div>
+                        <div class="bg-gradient-to-r from-brand-red/20 to-brand-gold/20 p-4 rounded-xl border-2 border-brand-gold flex justify-between items-center">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Agenda Utama: Uji Kompetensi Awal</h4>
+                                <p class="text-xs text-gray-400">Malam Minggu, 30 Mei 2026</p>
+                                <p class="text-[10px] text-brand-gold font-semibold mt-1">Seni: Tes Badge IPSI | Fighter: Tes Badge Fighter</p>
+                            </div>
+                            <span class="text-xs text-brand-black bg-brand-gold font-extrabold px-3 py-1 rounded-xl uppercase">TES AWAL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JUNI 2026 -->
+            <div id="month-juni" class="month-panel hidden space-y-4">
+                <div class="bg-brand-black border border-brand-gold/20 p-6 rounded-3xl">
+                    <span class="text-[10px] text-brand-gold font-bold uppercase tracking-widest block mb-1">Fokus Utama Bulan Ini</span>
+                    <h3 class="text-xl font-bold text-white mb-2">Latihan Rutin & Ujian Sabuk Merah</h3>
+                    <p class="text-xs text-gray-400 mb-6">Masa pembuktian ketahanan stamina serta kekuatan power teknik pukulan & tendangan awal.</p>
+                    
+                    <div class="space-y-3">
+                        <div class="bg-brand-darkGray/60 p-4 rounded-xl border-l-4 border-brand-gold flex justify-between items-center">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Latihan Rutin Siswa Sanggar</h4>
+                                <p class="text-xs text-gray-400">Kamis, 4, 11, 18, 25 Juni 2026</p>
+                            </div>
+                            <span class="text-xs text-brand-gold bg-brand-gold/10 px-2 py-0.5 rounded">Kamis Sore</span>
+                        </div>
+                        <div class="bg-brand-darkGray/60 p-4 rounded-xl border-l-4 border-brand-red flex justify-between items-center">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Latihan Rutin Kandidat PSHW</h4>
+                                <p class="text-xs text-gray-400">Malam Minggu, 6, 13, 20 Juni 2026</p>
+                            </div>
+                            <span class="text-xs text-brand-red bg-brand-red/10 px-2 py-0.5 rounded">Malam Minggu</span>
+                        </div>
+                        <div class="bg-gradient-to-r from-brand-red/20 to-brand-gold/20 p-4 rounded-xl border-2 border-brand-red flex justify-between items-center">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Agenda Utama: Uji Kenaikan Sabuk & Badge</h4>
+                                <p class="text-xs text-gray-400">Malam Minggu, 27 Juni 2026</p>
+                                <p class="text-[10px] text-brand-red font-semibold mt-1">Seni: Tes Sabuk Merah | Fighter: Tes Badge Sanggar</p>
+                            </div>
+                            <span class="text-xs text-white bg-brand-red font-extrabold px-3 py-1 rounded-xl uppercase">KENAIKAN</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JULI 2026 -->
+            <div id="month-juli" class="month-panel hidden space-y-4">
+                <div class="bg-brand-black border border-brand-gold/20 p-6 rounded-3xl">
+                    <span class="text-[10px] text-brand-gold font-bold uppercase tracking-widest block mb-1">Fokus Utama Bulan Ini</span>
+                    <h3 class="text-xl font-bold text-white mb-2">Turnamen Internal Tunas Muda NMP</h3>
+                    <p class="text-xs text-gray-400 mb-6">Ajang uji coba mental bertanding sesungguhnya antar sesama siswa sanggar Tunas-Muda NMP.</p>
+                    
+                    <div class="space-y-3">
+                        <div class="bg-brand-darkGray/60 p-4 rounded-xl border-l-4 border-brand-gold flex justify-between items-center">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Latihan Pemantapan & Turnamen Fisik</h4>
+                                <p class="text-xs text-gray-400">Kamis, 2, 9, 16, 30 Juli 2026</p>
+                            </div>
+                            <span class="text-xs text-brand-gold bg-brand-gold/10 px-2 py-0.5 rounded">Kamis Sore</span>
+                        </div>
+                        <div class="bg-brand-darkGray/60 p-4 rounded-xl border-l-4 border-brand-red flex justify-between items-center">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Pemantapan Materi Tanding Mandiri</h4>
+                                <p class="text-xs text-gray-400">Malam Minggu, 4, 11, 18 Juli 2026</p>
+                            </div>
+                            <span class="text-xs text-brand-red bg-brand-red/10 px-2 py-0.5 rounded">Malam Minggu</span>
+                        </div>
+                        <div class="bg-gradient-to-r from-yellow-600/20 to-brand-gold/20 p-4 rounded-xl border-2 border-amber-400 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Turnamen Internal: Kelas Seni & Fighter</h4>
+                                <p class="text-xs text-gray-400">Kamis, 23 Juli & Malam Minggu, 25 Juli 2026</p>
+                                <p class="text-[10px] text-brand-gold font-semibold mt-1">Uji kemampuan kembangan seni gerak, serta tanding tarung antar siswa.</p>
+                            </div>
+                            <span class="text-xs text-brand-black bg-amber-400 font-extrabold px-3 py-1 rounded-xl uppercase text-center self-start sm:self-auto">LOMBA INTERNAL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AGUSTUS 2026 -->
+            <div id="month-agustus" class="month-panel hidden space-y-4">
+                <div class="bg-brand-black border border-brand-gold/20 p-6 rounded-3xl">
+                    <span class="text-[10px] text-brand-gold font-bold uppercase tracking-widest block mb-1">Fokus Utama Bulan Ini</span>
+                    <h3 class="text-xl font-bold text-white mb-2">Persiapan Kejuaraan Bupati Cup</h3>
+                    <p class="text-xs text-gray-400 mb-6">Masa latihan keras/penggemblengan fisik intensif dalam menyambut kompetisi skala kabupaten.</p>
+                    
+                    <div class="space-y-3">
+                        <div class="bg-brand-darkGray/60 p-4 rounded-xl border-l-4 border-brand-gold flex justify-between items-center">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Pemantapan Koreo Seni Kembangan & Fisik</h4>
+                                <p class="text-xs text-gray-400">Kamis, 6, 13, 20, 27 Agustus 2026</p>
+                            </div>
+                            <span class="text-xs text-brand-gold bg-brand-gold/10 px-2 py-0.5 rounded">Sore</span>
+                        </div>
+                        <div class="bg-brand-darkGray/60 p-4 rounded-xl border-l-4 border-brand-red flex justify-between items-center">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Penggemblengan Fisik & Mental Ekstra PSHW</h4>
+                                <p class="text-xs text-gray-400">Malam Minggu, 1, 8, 15, 22, 29 Agustus 2026</p>
+                            </div>
+                            <span class="text-xs text-brand-red bg-brand-red/10 px-2 py-0.5 rounded">Malam</span>
+                        </div>
+                        <div class="bg-gradient-to-r from-brand-red/30 to-brand-black p-4 rounded-xl border border-brand-red/40">
+                            <h4 class="text-white font-bold text-sm"><i class="fa-solid fa-trophy text-brand-gold mr-2"></i> Pengiriman Kontingen Bupati Cup Mimika</h4>
+                            <p class="text-xs text-gray-300 mt-1">Jadwal turnamen resmi menyesuaikan agenda eksternal panitia. Diperlukan disiplin tanpa tawar selama proses karantina latihan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEPTEMBER 2026 -->
+            <div id="month-september" class="month-panel hidden space-y-4">
+                <div class="bg-brand-black border border-brand-gold/20 p-6 rounded-3xl">
+                    <span class="text-[10px] text-brand-gold font-bold uppercase tracking-widest block mb-1">Fokus Utama Bulan Ini</span>
+                    <h3 class="text-xl font-bold text-white mb-2">Kenaikan Tingkat Menengah</h3>
+                    <p class="text-xs text-gray-400 mb-6">Masa evaluasi pasca-Bupati Cup dan ujian kenaikan sabuk penengah bagi divisi tarung maupun seni.</p>
+                    
+                    <div class="space-y-3">
+                        <div class="bg-brand-darkGray/60 p-4 rounded-xl border-l-4 border-brand-gold flex justify-between items-center">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Latihan Rutin Siswa Sanggar</h4>
+                                <p class="text-xs text-gray-400">Kamis, 3, 10, 17, 24 September 2026</p>
+                            </div>
+                            <span class="text-xs text-brand-gold bg-brand-gold/10 px-2 py-0.5 rounded">Kamis Sore</span>
+                        </div>
+                        <div class="bg-brand-darkGray/60 p-4 rounded-xl border-l-4 border-brand-red flex justify-between items-center">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Latihan Rutin Kandidat PSHW</h4>
+                                <p class="text-xs text-gray-400">Malam Minggu, 5, 12, 19 September 2026</p>
+                            </div>
+                            <span class="text-xs text-brand-red bg-brand-red/10 px-2 py-0.5 rounded">Malam Minggu</span>
+                        </div>
+                        <div class="bg-gradient-to-r from-brand-red/20 to-brand-gold/20 p-4 rounded-xl border-2 border-brand-gold flex justify-between items-center">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Agenda Utama: Tes Sabuk Merah & Orange</h4>
+                                <p class="text-xs text-gray-400">Malam Minggu, 26 September 2026</p>
+                                <p class="text-[10px] text-brand-gold font-semibold mt-1">Fighter: Tes Sabuk Merah | Seni: Tes Badge Seni & Sabuk Orange</p>
+                            </div>
+                            <span class="text-xs text-brand-black bg-brand-gold font-extrabold px-3 py-1 rounded-xl uppercase">TES LANJUTAN</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OKTOBER 2026 -->
+            <div id="month-oktober" class="month-panel hidden space-y-4">
+                <div class="bg-brand-black border border-brand-gold/20 p-6 rounded-3xl">
+                    <span class="text-[10px] text-brand-gold font-bold uppercase tracking-widest block mb-1">Fokus Utama Bulan Ini</span>
+                    <h3 class="text-xl font-bold text-white mb-2">Pemantapan Jiwa & Ke-SH-an</h3>
+                    <p class="text-xs text-gray-400 mb-6">Penajaman ajaran budi pekerti, kerohanian Ke-SH-an Winongo, serta pendisiplinan jasmani spiritual.</p>
+                    
+                    <div class="space-y-3">
+                        <div class="bg-brand-darkGray/60 p-4 rounded-xl border-l-4 border-brand-gold flex justify-between items-center">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Latihan Fisik & Keindahan Teknik Gerak</h4>
+                                <p class="text-xs text-gray-400">Kamis, 1, 8, 15, 22, 29 Oktober 2026</p>
+                            </div>
+                            <span class="text-xs text-brand-gold bg-brand-gold/10 px-2 py-0.5 rounded">Kamis Sore</span>
+                        </div>
+                        <div class="bg-brand-darkGray/60 p-4 rounded-xl border-l-4 border-brand-red flex justify-between items-center">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Latihan Rutin & Pembekalan Kerohanian</h4>
+                                <p class="text-xs text-gray-400">Malam Minggu, 3, 10, 17, 24, 31 Oktober 2026</p>
+                            </div>
+                            <span class="text-xs text-brand-red bg-brand-red/10 px-2 py-0.5 rounded">Malam Minggu</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NOVEMBER 2026 -->
+            <div id="month-november" class="month-panel hidden space-y-4">
+                <div class="bg-brand-black border border-brand-gold/20 p-6 rounded-3xl">
+                    <span class="text-[10px] text-brand-gold font-bold uppercase tracking-widest block mb-1">Fokus Utama Bulan Ini</span>
+                    <h3 class="text-xl font-bold text-white mb-2">Uji Kepemimpinan & Mental Ksatria</h3>
+                    <p class="text-xs text-gray-400 mb-6">Tahap penting pemilikan karakter pelopor, keberanian mengambil tanggung jawab pembimbingan.</p>
+                    
+                    <div class="space-y-3">
+                        <div class="bg-brand-darkGray/60 p-4 rounded-xl border-l-4 border-brand-gold flex justify-between items-center">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Latihan Rutin Siswa Sanggar</h4>
+                                <p class="text-xs text-gray-400">Kamis, 5, 12, 19, 26 November 2026</p>
+                            </div>
+                            <span class="text-xs text-brand-gold bg-brand-gold/10 px-2 py-0.5 rounded">Kamis Sore</span>
+                        </div>
+                        <div class="bg-brand-darkGray/60 p-4 rounded-xl border-l-4 border-brand-red flex justify-between items-center">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Latihan Rutin Kandidat PSHW</h4>
+                                <p class="text-xs text-gray-400">Malam Minggu, 7, 14, 21 November 2026</p>
+                            </div>
+                            <span class="text-xs text-brand-red bg-brand-red/10 px-2 py-0.5 rounded">Malam Minggu</span>
+                        </div>
+                        <div class="bg-gradient-to-r from-brand-red/20 to-brand-gold/20 p-4 rounded-xl border-2 border-white flex justify-between items-center">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Agenda Utama: Tes Badge Merah Putih</h4>
+                                <p class="text-xs text-gray-400">Malam Minggu, 28 November 2026</p>
+                                <p class="text-[10px] text-gray-300 mt-1">Seni & Fighter: Pengujian jiwa kepemimpinan pelopor bagi seluruh kandidat tingkat lanjut.</p>
+                            </div>
+                            <span class="text-xs text-brand-black bg-white font-extrabold px-3 py-1 rounded-xl uppercase">TES BADGE MP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DESEMBER 2026 -->
+            <div id="month-desember" class="month-panel hidden space-y-4">
+                <div class="bg-brand-black border border-brand-gold/20 p-6 rounded-3xl">
+                    <span class="text-[10px] text-brand-gold font-bold uppercase tracking-widest block mb-1">Misi Akhir Pengesahan</span>
+                    <h3 class="text-xl font-bold text-white mb-2">Evaluasi Tingkat Akhir & Pengesahan</h3>
+                    <p class="text-xs text-gray-400 mb-6">Puncak evaluasi tertinggi untuk menyandang gelar dan sah menjadi bagian dari keluarga besar PSHW.</p>
+                    
+                    <div class="space-y-3">
+                        <div class="bg-brand-darkGray/60 p-4 rounded-xl border-l-4 border-brand-gold flex justify-between items-center">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Latihan Evaluasi Akhir Bersama</h4>
+                                <p class="text-xs text-gray-400">Kamis, 3, 10, 17 Desember 2026</p>
+                            </div>
+                            <span class="text-xs text-brand-gold bg-brand-gold/10 px-2 py-0.5 rounded">Kamis Sore</span>
+                        </div>
+                        <div class="bg-brand-darkGray/60 p-4 rounded-xl border-l-4 border-brand-red flex justify-between items-center">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Pembekalan Akhir Khusus Kandidat</h4>
+                                <p class="text-xs text-gray-400">Malam Minggu, 5, 19 Desember 2026</p>
+                            </div>
+                            <span class="text-xs text-brand-red bg-brand-red/10 px-2 py-0.5 rounded">Malam Minggu</span>
+                        </div>
+                        <div class="bg-brand-darkGray/60 p-4 rounded-xl border-l-4 border-red-500 flex justify-between items-center">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Hari Libur Hari Raya Natal & Tahun Baru</h4>
+                                <p class="text-xs text-gray-400">Kamis, 24 Desember & Kamis, 31 Desember 2026</p>
+                            </div>
+                            <span class="text-xs text-red-500 bg-red-500/10 px-2 py-0.5 rounded">LIBUR</span>
+                        </div>
+                        <div class="bg-gradient-to-r from-brand-red/30 via-brand-gold/30 to-brand-red/30 p-5 rounded-2xl border-2 border-brand-gold text-center">
+                            <h4 class="text-brand-gold font-extrabold text-base uppercase"><i class="fa-solid fa-yin-yang mr-2"></i> PUNCAK TES: TINGKAT AKHIR & KELULUSAN</h4>
+                            <p class="text-xs text-white mt-1">Malam Minggu, 12 Desember 2026</p>
+                            <p class="text-xs text-gray-300 mt-2">
+                                <strong>Fighter & Seni:</strong> Tes Sabuk Orange (Tahap Akhir) & Tes Badge Sanggar Seni Tunas Muda NMP. Keberhasilan di tes ini menandakan kelayakan mutlak untuk <strong>Disahkan Menjadi Saudara PSHW (Persaudaraan Setia Hati Winongo)</strong>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Gallery Section (New Section) -->
+    <section id="galeri" class="py-20 px-4 md:px-8 bg-brand-black/85 border-t border-brand-gold/10 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-red">DOKUMENTASI SANGGAR</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mt-1">Galeri Kegiatan</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto mt-3 text-sm md:text-base">
+                    Kilasan potret semangat, kedisiplinan dan persaudaraan erat seluruh siswa dan saudara selama menjalankan latihan rutin maupun evaluasi fisik.
+                </p>
+            </div>
+
+            <!-- Responsive Image Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Foto Kegiatan PSHW -->
+                <div class="relative group overflow-hidden rounded-2xl border border-brand-gold/20 shadow-xl bg-brand-darkGray min-h-[300px] flex items-center justify-center">
+                    <img src="fotokegiatanpshw.HEIC" alt="Kegiatan PSHW" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1555597673-b21d5c935865?w=500';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent opacity-80"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-left z-10">
+                        <span class="px-2 py-0.5 bg-brand-red text-white font-bold text-[9px] uppercase rounded">PSHW SP.6</span>
+                        <h4 class="text-white font-extrabold text-sm mt-1">Latihan Gabungan</h4>
+                        <p class="text-[10px] text-gray-300">Pengondisian fisik rutin siswa calon saudara.</p>
+                    </div>
+                </div>
+
+                <!-- Foto Kegiatan Umum -->
+                <div class="relative group overflow-hidden rounded-2xl border border-brand-gold/20 shadow-xl bg-brand-darkGray min-h-[300px] flex items-center justify-center">
+                    <img src="fotokegiatan.HEIC" alt="Kegiatan Sanggar" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=500';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent opacity-80"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-left z-10">
+                        <span class="px-2 py-0.5 bg-brand-gold text-brand-black font-bold text-[9px] uppercase rounded">Tunas-Muda</span>
+                        <h4 class="text-white font-extrabold text-sm mt-1">Persaudaraan Erat</h4>
+                        <p class="text-[10px] text-gray-300">Kebersamaan pimpinan, pengurus, dan siswa sanggar.</p>
+                    </div>
+                </div>
+
+                <!-- Foto Tambahan -->
+                <div class="relative group overflow-hidden rounded-2xl border border-brand-gold/20 shadow-xl bg-brand-darkGray min-h-[300px] flex items-center justify-center">
+                    <img src="IMG_4290.HEIC" alt="Evaluasi Fisik" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent opacity-80"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-left z-10">
+                        <span class="px-2 py-0.5 bg-brand-red text-white font-bold text-[9px] uppercase rounded">Evaluasi Fisik</span>
+                        <h4 class="text-white font-extrabold text-sm mt-1">Ujian Penggemblengan</h4>
+                        <p class="text-[10px] text-gray-300">Pendidikan mental dan kekuatan batin ksatria.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kampung Naena Muktipura Hub -->
+    <section id="kampung" class="py-20 px-4 md:px-8 bg-brand-darkGray/60 border-t border-brand-gold/10 relative z-10">
+        <div class="max-w-5xl mx-auto">
+            <div class="bg-gradient-to-b from-brand-black to-brand-darkGray border border-brand-red/30 rounded-3xl p-6 md:p-10 shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-16 -bottom-16 w-60 h-60 bg-brand-gold/5 rounded-full blur-3xl"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-8 space-y-4">
+                        <span class="px-3 py-1 bg-brand-gold/10 text-brand-gold border border-brand-gold/20 rounded-full text-xs font-semibold tracking-wide">
+                            <i class="fa-solid fa-map-pin mr-2 text-brand-red"></i> Lokasi & Tanah Asal
+                        </span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-white">Kampung Naena Muktipura</h2>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            Naena Muktipura adalah kampung subur di daerah transmigrasi SP.6 yang berada di bawah administrasi <strong class="text-brand-gold">Distrik Iwaka, Kabupaten Mimika, Provinsi Papua Tengah, Indonesia</strong>. Sanggar Seni Tunas-Muda NMP tumbuh subur berakar pada tradisi kearifan lokal tanah adat ini.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-4 pt-2">
+                            <div class="border-l-2 border-brand-red pl-3">
+                                <h4 class="text-xs text-gray-400 font-bold uppercase">Distrik</h4>
+                                <p class="text-white text-sm font-semibold">Iwaka, Mimika</p>
+                            </div>
+                            <div class="border-l-2 border-brand-gold pl-3">
+                                <h4 class="text-xs text-gray-400 font-bold uppercase">Klasifikasi Sektor</h4>
+                                <p class="text-white text-sm font-semibold">SP.6 Sentra Kebudayaan</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Link Button Card -->
+                    <div class="md:col-span-4 bg-brand-black/80 border border-brand-gold/20 p-6 rounded-2xl text-center flex flex-col items-center justify-center">
+                        <div class="text-brand-gold text-4xl mb-3"><i class="fa-solid fa-globe"></i></div>
+                        <h4 class="text-white font-bold text-sm mb-1">Website Resmi Desa</h4>
+                        <p class="text-[11px] text-gray-400 mb-4">Akses info terkini, IDM, SDGs desa langsung di portal resmi.</p>
+                        <a href="https://share.google/JRxRa8Scgqbe1PlyC" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 bg-gradient-to-r from-brand-red to-brand-gold text-brand-black font-extrabold text-xs uppercase tracking-widest rounded-xl hover:shadow-[0_0_15px_rgba(255,179,0,0.4)] transition duration-200">
+                            Buka Website <i class="fa-solid fa-external-link ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Whatsapp Hub (New Section) -->
+    <section id="kontak" class="py-20 px-4 md:px-8 max-w-7xl mx-auto relative z-10 border-t border-brand-gold/10">
+        <div class="text-center mb-16">
+            <span class="text-xs font-bold uppercase tracking-widest text-brand-gold">KONTAK INFORMASI PAB</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white mt-1">Hubungi Pengurus Inti</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mt-3 text-sm md:text-base">
+                Ada pertanyaan mengenai biaya pendaftaran, seragam latihan, atau lokasi sanggar? Silakan hubungi kami langsung via WhatsApp.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <!-- Rohilman (Ketua) -->
+            <div class="bg-brand-black/80 border border-brand-red/20 p-6 rounded-3xl text-center flex flex-col justify-between items-center hover:border-brand-red transition duration-300">
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-full bg-brand-red/10 text-brand-red flex items-center justify-center text-xl mb-3">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h4 class="text-white font-extrabold text-base">Rohilman Putra Jagong</h4>
+                    <span class="text-[10px] text-brand-red font-bold uppercase tracking-widest mt-0.5">Ketua Sanggar Seni</span>
+                </div>
+                <p class="text-xs text-gray-400 my-4">Konsultasi mengenai program divisi seni, jadwal kembangan jurus dan aksesoris.</p>
+                <a href="https://wa.me/6282235895652" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 bg-brand-red hover:bg-brand-redHover text-white font-bold text-xs uppercase rounded-xl inline-flex items-center justify-center gap-2 transition duration-200">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> Kirim Pesan WA
+                </a>
+            </div>
+
+            <!-- Zaenal Abidin (Wakil Ketua) -->
+            <div class="bg-brand-black/80 border border-brand-gold/20 p-6 rounded-3xl text-center flex flex-col justify-between items-center hover:border-brand-gold transition duration-300">
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl mb-3">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h4 class="text-white font-extrabold text-base">Zaenal Abidin</h4>
+                    <span class="text-[10px] text-brand-gold font-bold uppercase tracking-widest mt-0.5">Wakil Ketua / Kadiv Fighter</span>
+                </div>
+                <p class="text-xs text-gray-400 my-4">Konsultasi mengenai latihan fisik, teknik tanding gelanggang, turnamen Bupati Cup.</p>
+                <a href="https://wa.me/6282181210405" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 bg-brand-gold hover:bg-brand-goldHover text-brand-black font-bold text-xs uppercase rounded-xl inline-flex items-center justify-center gap-2 transition duration-200">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> Kirim Pesan WA
+                </a>
+            </div>
+
+            <!-- Hasna (Sekretaris) -->
+            <div class="bg-brand-black/80 border border-brand-red/20 p-6 rounded-3xl text-center flex flex-col justify-between items-center hover:border-brand-red transition duration-300">
+                <div class="flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-full bg-brand-red/10 text-brand-red flex items-center justify-center text-xl mb-3">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h4 class="text-white font-extrabold text-base">Hasna Rahayu Safitri</h4>
+                    <span class="text-[10px] text-brand-red font-bold uppercase tracking-widest mt-0.5">Sekretaris Sanggar</span>
+                </div>
+                <p class="text-xs text-gray-400 my-4">Konsultasi mengenai persyaratan dokumen pendaftaran, pendataan siswa baru sanggar.</p>
+                <a href="https://wa.me/6282197752832" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 bg-brand-red hover:bg-brand-redHover text-white font-bold text-xs uppercase rounded-xl inline-flex items-center justify-center gap-2 transition duration-200">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> Kirim Pesan WA
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-black border-t border-brand-gold/20 py-10 px-4 md:px-8 text-center text-xs text-gray-500 relative z-10">
+        <div class="max-w-7xl mx-auto space-y-4">
+            <div class="flex items-center justify-center space-x-3">
+                <div class="w-8 h-8 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold text-sm font-extrabold overflow-hidden">
+                    <img src="IMG_6192.jpg" alt="Logo Sanggar" class="w-full h-full object-cover rounded-full" onerror="this.outerHTML='NMP'">
+                </div>
+                <span class="text-gray-300 font-bold tracking-wider">Sanggar Seni Tunas-Muda Naena Muktipura</span>
+            </div>
+            <p class="max-w-md mx-auto leading-relaxed">
+                Di bawah bimbingan dan perlindungan PSHW Ranting SP.6 Naena Muktipura, Distrik Iwaka, Kabupaten Mimika, Papua Tengah. Menjunjung tinggi asas luhur kebenaran Winongo.
+            </p>
+            <p class="text-[10px] text-gray-600 pt-4 border-t border-gray-900">
+                &copy; 2026 Sanggar Seni Tunas-Muda NMP & PSHW SP.6. Seluruh hak cipta dilindungi undang-undang.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Interactive Javascript functionality -->
+    <script>
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Switch Logo Tabs
+        function switchLogoTab(tabId) {
+            // Hide all contents
+            document.querySelectorAll('.logo-content-tab').forEach(el => {
+                el.classList.add('hidden');
+            });
+            // Show selected content
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+
+            // Reset tab button styles
+            document.querySelectorAll('.logo-tab-btn').forEach(btn => {
+                btn.className = "logo-tab-btn flex-1 min-w-[150px] py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-brand-black border border-brand-gold/30 text-gray-300 hover:border-brand-gold transition duration-200";
+            });
+
+            // Highlight selected button
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.className = "logo-tab-btn flex-1 min-w-[150px] py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-brand-red to-brand-gold text-brand-black shadow-lg transition duration-200";
+        }
+
+        // Switch Month Schedule Tabs
+        function switchMonth(monthName) {
+            // Hide all panels
+            document.querySelectorAll('.month-panel').forEach(panel => {
+                panel.classList.add('hidden');
+            });
+            // Show selected month
+            document.getElementById('month-' + monthName).classList.remove('hidden');
+
+            // Reset button styles
+            document.querySelectorAll('.month-tab-btn').forEach(btn => {
+                btn.className = "month-tab-btn py-2 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-brand-black border border-brand-gold/20 text-gray-300 hover:border-brand-gold transition duration-150";
+            });
+
+            // Highlight active button
+            const activeBtn = document.getElementById('btn-' + monthName);
+            activeBtn.className = "month-tab-btn py-2 px-4 rounded-xl text-xs font-bold uppercase tracking-wider bg-brand-gold text-brand-black shadow transition duration-150";
+        }
+
+
+        // INTERACTIVE QUIZ DATA & LOGIC
+        const quizQuestions = [
+            {
+                q: "Aspek mana yang paling menarik perhatianmu ketika melihat demonstrasi bela diri pencak silat?",
+                options: [
+                    { text: "Keindahan rangkaian gerak yang halus, kuncian estetik, dan pertunjukan senjata tradisional seperti golok.", score: "seni" },
+                    { text: "Kecepatan menghindar, serangan balasan yang spontan dan keras, serta teknik menjatuhkan lawan di arena.", score: "fighter" }
+                ]
+            },
+            {
+                q: "Bagaimana tanggapanmu terhadap benturan fisik dan latih tanding langsung dengan rekan setim?",
+                options: [
+                    { text: "Saya lebih menyukai kelenturan gerak dan kebersihan bentuk jurus tanpa harus bertarung penuh benturan.", score: "seni" },
+                    { text: "Saya menyukai tantangan bertarung langsung, melatih ketahanan fisik, pukulan, dan mental juang satu lawan satu.", score: "fighter" }
+                ]
+            },
+            {
+                q: "Kekuatan mental dan fisik apa yang paling kamu rasa menonjol pada dirimu saat ini?",
+                options: [
+                    { text: "Daya ingat yang baik untuk mengingat gerakan rumit serta konsentrasi tinggi menjaga keindahan estetika gerak.", score: "seni" },
+                    { text: "Kekuatan tubuh untuk menerima benturan, kelincahan gerak menghindar, dan keberanian tanding yang tak kenal takut.", score: "fighter" }
+                ]
+            },
+            {
+                q: "Di masa depan, dalam kegiatan turnamen pencak silat, kategori apa yang paling kamu impikan untuk dimenangi?",
+                options: [
+                    { text: "Kategori Seni Tunggal, Ganda, atau Regu yang dinilai berdasarkan keindahan visual, keserasian, dan power jurus.", score: "seni" },
+                    { text: "Kategori Tanding Kelas Prestasi yang dinilai langsung berdasarkan poin pukulan, tendangan, dan bantingan yang berhasil masuk.", score: "fighter" }
+                ]
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let scores = { seni: 0, fighter: 0 };
+
+        function loadQuestion() {
+            if (currentQuestionIndex < quizQuestions.length) {
+                const currentQuestion = quizQuestions[currentQuestionIndex];
+                
+                // Update Progress bar
+                const progressPercentage = ((currentQuestionIndex + 1) / quizQuestions.length) * 100;
+                document.getElementById('quiz-progress').style.width = progressPercentage + '%';
+
+                // Render Question
+                document.getElementById('question-text').innerText = `${currentQuestionIndex + 1}. ${currentQuestion.q}`;
+                
+                // Render Answers
+                const answersContainer = document.getElementById('answers-container');
+                answersContainer.innerHTML = '';
+                
+                currentQuestion.options.forEach((opt, index) => {
+                    const btn = document.createElement('button');
+                    btn.className = "w-full text-left p-4 rounded-xl border border-brand-gold/20 hover:border-brand-gold hover:bg-brand-gold/5 text-gray-300 hover:text-white transition duration-200 text-xs md:text-sm";
+                    btn.innerText = opt.text;
+                    btn.onclick = () => selectAnswer(opt.score);
+                    answersContainer.appendChild(btn);
+                });
+            } else {
+                showResult();
+            }
+        }
+
+        function selectAnswer(scoreType) {
+            scores[scoreType]++;
+            currentQuestionIndex++;
+            loadQuestion();
+        }
+
+        function showResult() {
+            document.getElementById('quiz-container').classList.add('hidden');
+            const resultBlock = document.getElementById('quiz-result');
+            resultBlock.classList.remove('hidden');
+
+            const resultIcon = document.getElementById('result-icon');
+            const resultTitle = document.getElementById('result-title');
+            const resultDescription = document.getElementById('result-description');
+
+            if (scores.seni >= scores.fighter) {
+                resultIcon.innerHTML = `<i class="fa-solid fa-fan text-brand-red animate-spin" style="animation-duration: 4s;"></i>`;
+                resultTitle.innerText = "Divisi Seni (Kreativitas & Estetika)";
+                resultTitle.className = "text-2xl md:text-3xl font-extrabold mt-1 text-brand-red";
+                resultDescription.innerText = "Karaktermu sangat menghargai keindahan, detail gerak, dan memiliki daya ingat yang bagus. Kamu cocok berada di bawah bimbingan Rohilman Putra Jagong untuk memperdalam jurus tunggal/ganda IPSI dan senjata tradisional golok.";
+            } else {
+                resultIcon.innerHTML = `<i class="fa-solid fa-fire-flame-curved text-brand-gold animate-bounce"></i>`;
+                resultTitle.innerText = "Divisi Fighter (Pejuang Arena)";
+                resultTitle.className = "text-2xl md:text-3xl font-extrabold mt-1 text-brand-gold";
+                resultDescription.innerText = "Kamu memiliki nyali besar, ketahanan fisik, dan keberanian berbenturan. Kamu direkomendasikan masuk ke Divisi Fighter di bawah bimbingan Zaenal Abidin untuk mengasah teknik bantingan, kelincahan tanding, dan memperebutkan medali di arena Bupati Cup.";
+            }
+        }
+
+        function resetQuiz() {
+            currentQuestionIndex = 0;
+            scores = { seni: 0, fighter: 0 };
+            document.getElementById('quiz-result').classList.add('hidden');
+            document.getElementById('quiz-container').classList.remove('hidden');
+            loadQuestion();
+        }
+
+        // Initialize quiz on load
+        window.onload = function() {
+            loadQuestion();
+        };
+    </script>
+</body>
+</html>
